@@ -1,0 +1,21 @@
+<h1>Add City</h1>
+<form [formGroup]="formGrp" (ngSubmit)="onClickSubmit(formGrp.value)" > 
+    <p>City Name <input type="text" formControlName = "cityName" name="cityName" id="cityName" /></p>
+        <div *ngIf="formGrp.controls['cityName'].invalid && (formGrp.controls['cityName'].dirty || formGrp.controls['cityName'].touched)" class="alert alert-danger">
+            <div *ngIf="formGrp.controls['cityName'].errors && formGrp.controls['cityName'].errors.required">
+              City Name is required.
+            </div>
+        </div>
+    
+    <p>City Details <input type="text" formControlName = "cityDetails" name="cityDetails" id="cityDetails" /></p>
+        <div *ngIf="formGrp.controls['cityDetails'].invalid && (formGrp.controls['cityDetails'].dirty || formGrp.controls['cityDetails'].touched)" class="alert alert-danger">
+            <div *ngIf="formGrp.controls['cityDetails'].errors && formGrp.controls['cityDetails'].errors.required">
+              City Details is required.
+            </div>
+          </div>
+    
+    <p>
+        <input type="button" name="btnBack" value="Back" (click)="onClickBack()"/>&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="Submit" id="submit" name="submit" />
+    </p>
+</form>

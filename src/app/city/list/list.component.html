@@ -1,0 +1,12 @@
+<h1>City List</h1>
+<a href="add-city">Add City</a>
+<table>
+    <tr>
+        <th>Sr No</th><th>City</th><th>Edit</th><th>View</th>
+    </tr>
+    <tbody *ngFor="let city of cities; let i = index">
+        <tr>
+            <td>{{i + 1}}</td><td>{{city.name}}</td><td><a routerLink="/edit-city/{{city.id}}">Edit</a></td><td><a routerLink="/view-city/{{city.id}}">View</a></td>
+        </tr>
+    </tbody>
+</table>
